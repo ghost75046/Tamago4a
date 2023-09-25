@@ -38,13 +38,13 @@ function App(props) {
                     </div>
                 </div>
                 <div className='myEgg'>
-                    {/*<img src={logo} alt="#" className='myEgg'/>*/}
+
 
                     <button onClick={onClickHandler}>1</button>
-                    {/*<audio src={Bethoven}></audio>*/}
+
 
                     <button onClick={handleClick}>2</button>
-                    {/*<img src={logo} alt="#"/>*/}
+
                     <button>3</button>
                 </div>
 
