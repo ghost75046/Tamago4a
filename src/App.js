@@ -25,7 +25,7 @@ const App = (props) => {
     return (
         <div className='mainDiv'>
 
-            <Food foodLevel={props.foodLevel}/>
+            <Food foodLevel={props.foodLevel} feeder={props.feeder} rerenderEntireTree={props.rerenderEntireTree}/>
             <div className='myEgg'>
 
 
