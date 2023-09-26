@@ -4,10 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import users from "./MySql";
+import shava from "./shaverma.png";
+import state from './redux/state'
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App users={users}/>
+    <App users={users} foodLevel={state.foodLevel}/>
   </React.StrictMode>
 );
 

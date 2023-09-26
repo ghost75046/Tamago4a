@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css'
-
+//import feeder from './stat/Food'
 
 import crispsCrunch from './crispsCrunch.mp3'
 import Food from "./stat/Food";
@@ -25,7 +25,7 @@ const App = (props) => {
     return (
         <div className='mainDiv'>
 
-            <Food/>
+            <Food foodLevel={props.foodLevel}/>
             <div className='myEgg'>
 
 
@@ -34,6 +34,7 @@ const App = (props) => {
 
                 <button onClick={handleClick}>2</button>
 
+                {/*<button onClick={feeder}>3</button>*/}
                 <button>3</button>
             </div>
 
