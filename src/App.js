@@ -4,6 +4,19 @@ import './App.css'
 
 import crispsCrunch from './crispsCrunch.mp3'
 import Food from "./stat/Food";
+import state from "./redux/state";
+import day from './day.jpg'
+import night from './night.jpg'
+
+let today = new Date();
+//let myTime= today.getHours()
+let myTime =15
+ let fon
+if(myTime > 9 && myTime<20){
+    fon=day
+}else{
+    fon=night
+}
 
 const App = (props) => {
 
@@ -24,7 +37,7 @@ const App = (props) => {
     }
     return (
         <div className='mainDiv'>
-
+            <img className='fon' src={fon} alt="#"/>
             <Food foodLevel={props.foodLevel} feeder={props.feeder} rerenderEntireTree={props.rerenderEntireTree}/>
             <div className='myEgg'>
 
