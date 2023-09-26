@@ -6,7 +6,7 @@ import day from './../day.jpg'
 import night from './../night.jpg'
 let today = new Date();
 let myTime= today.getHours()
-alert(myTime)
+    //alert(myTime)
 export let fon
 if(myTime > 9 && myTime<20){
     fon=day
@@ -30,6 +30,15 @@ export let  feeder = (postMessage) => {
     }
 }
 
+
+function sayHi() {
+    if (state.foodLevel.length > 1){
+    state.foodLevel.pop()
+    rerenderEntireTree(state)}
+    //alert(state.foodLevel.length)
+}
+
+setInterval(sayHi, 5000);
 
 
 

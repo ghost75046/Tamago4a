@@ -8,9 +8,11 @@ import state from "./redux/state";
 import day from './day.jpg'
 import night from './night.jpg'
 
+
+
 let today = new Date();
 //let myTime= today.getHours()
-let myTime =15
+let myTime =23
  let fon
 if(myTime > 9 && myTime<20){
     fon=day
