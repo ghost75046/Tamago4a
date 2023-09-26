@@ -16,8 +16,8 @@ const Food = (props) => {
             <div className='hungryLevel'>
                 {props.foodLevel}
             </div>
-            <button onClick={props.feeder}>3</button>
-            <button onClick={props.rerenderEntireTree}>4</button>
+            <button onClick={props.feeder}>Покормить</button>
+
 
         </div>
     )
