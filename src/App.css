@@ -111,6 +111,11 @@
   width:50px;
 }
 
+.kakaLevel{
+  display: flex;
+  flex-direction: row;
+}
+
 .fon{
   width:500px;
 }

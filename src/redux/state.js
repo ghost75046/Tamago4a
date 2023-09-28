@@ -30,7 +30,8 @@ export let kakaPush  = () => {
 
         rerenderEntireTree(state)
     }else{
-        alert('tooManyKaka')
+
+        alert('dieInShit')
     }
 }
 export let  feeder = () => {
@@ -38,7 +39,10 @@ export let  feeder = () => {
 
     state.foodLevel.push(<div className='hungryItem'><img src={shava} alt="#"/></div>)
     eatingMusic.play()
-        setTimeout(kakaPush, 5000);
+
+        if (state.kakaLevel.length < 7) {
+            setTimeout(kakaPush, 5000);
+        }
     rerenderEntireTree(state)
     }else{
         alert('Я не голодный')
@@ -48,14 +52,10 @@ export let  feeder = () => {
 
 
 export let  kakaCleaner = () => {
-    if (state.kakaLevel.length < 6) {
-
-        state.kakaLevel.pop()
+            state.kakaLevel.pop()
         cleaningMusic.play()
         rerenderEntireTree(state)
-    }else{
-        alert('died in shit')
-    }
+
 }
 
 
