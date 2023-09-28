@@ -6,6 +6,13 @@ import crispsCrunch from "../crispsCrunch.mp3";
 import cleanerMusic from "../cleanerMusic.mp3"
 import day from './../day.jpg'
 import night from './../night.jpg'
+import emotionNormalPath from "../emotionNormal.png"
+import emotionHappyPath from "../emotionHappy.png"
+import emotionSadPath from "../emotionSad.png"
+
+
+
+
 let today = new Date();
 let myTime= today.getHours()
     //alert(myTime)
@@ -18,7 +25,7 @@ if(myTime > 9 && myTime<20){
 
 // добавить функцию, чекающую и выводящую алёрт  if(state.foodLevel.length < 2){alert('Я хочу есть')}
 export let state ={
-    foodLevel:[<div className='hungryItem'><img src={shava} alt="#"/></div>],kakaLevel:[<div className='kakaItem'><img src={kaka} alt="#"/></div>]
+    foodLevel:[<div className='hungryItem'><img src={shava} alt="#"/></div>],kakaLevel:[<div className='kakaItem'><img src={kaka} alt="#"/></div>], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}
 }
 let eatingMusic = new Audio(crispsCrunch)
 let cleaningMusic = new Audio(cleanerMusic)
@@ -70,5 +77,24 @@ function sayHi() {
 setInterval(sayHi, 5000);
 
 
+
+export let checkEmotion = () => {
+    let emotionPicturePath =''
+
+    switch (state.emotion.value) {
+        case 'happy':
+            state.emotionPicturePath = emotionHappyPath;
+            break
+
+        case 'normal':
+            state.emotionPicturePath = emotionNormalPath;
+            break
+
+        case 'sad':
+            state.emotionPicturePath = emotionSadPath;
+            break
+
+    }
+}
 
 export default state

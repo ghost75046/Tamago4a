@@ -53,6 +53,7 @@ const App = (props) => {
                 {/*<button onClick={feeder}>3</button>*/}
                 <button>3</button>
             </div>
+            <img className='emotion' src={props.emotion} alt="#"/>
             <Kaka kakaLevel={props.kakaLevel} kakaCleaner={props.kakaCleaner}/>
         </div>
 
