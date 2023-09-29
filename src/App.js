@@ -8,6 +8,8 @@ import state from "./redux/state";
 import day from './day.jpg'
 import night from './night.jpg'
 import Kaka from "./stat/Kaka";
+import GamingButtons from "./components/GamingButtons";
+import Statistics from "./components/Statistics";
 
 
 
@@ -21,7 +23,9 @@ if(myTime > 9 && myTime<20){
     fon=night
 }
 
+
 const App = (props) => {
+
 
 
     const onClickHandler = () => {
@@ -41,20 +45,17 @@ const App = (props) => {
     return (
         <div className='mainDiv'>
             <img className='fon' src={fon} alt="#"/>
-            <Food foodLevel={props.foodLevel} feeder={props.feeder} rerenderEntireTree={props.rerenderEntireTree}/>
+
             <div className='myEgg'>
+            <Food foodLevel={props.foodLevel} feeder={props.feeder} rerenderEntireTree={props.rerenderEntireTree}/>
 
 
-                <button onClick={onClickHandler}>1</button>
 
 
-                <button onClick={handleClick}>2</button>
-
-                {/*<button onClick={feeder}>3</button>*/}
-                <button>3</button>
-            </div>
-            <img className='emotion' src={props.emotion} alt="#"/>
             <Kaka kakaLevel={props.kakaLevel} kakaCleaner={props.kakaCleaner}/>
+                <img className='emotion' src={props.emotion} alt="#"/>
+            <GamingButtons feeder={props.feeder} kakaCleaner={props.kakaCleaner}/>
+            </div>
         </div>
 
 

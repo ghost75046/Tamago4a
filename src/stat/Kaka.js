@@ -14,10 +14,10 @@ const Kaka = (props) => {
     return (<div>
 
             <div className='kakaLevel'>
-                kakaLevel
+
                 {props.kakaLevel}
             </div>
-            <button onClick={props.kakaCleaner}>убрать</button>
+            {/*<button onClick={props.kakaCleaner}>убрать</button>*/}
 
 
         </div>
