@@ -8,6 +8,7 @@ import state from "./redux/state";
 import day from './day.jpg'
 import night from './night.jpg'
 import Kaka from "./stat/Kaka";
+import Delya from './Delya.png'
 import GamingButtons from "./components/GamingButtons";
 import Statistics from "./components/Statistics";
 
@@ -50,7 +51,7 @@ const App = (props) => {
             <Food foodLevel={props.foodLevel} feeder={props.feeder} rerenderEntireTree={props.rerenderEntireTree}/>
 
 
-
+                <img className='Delya' src={Delya} alt="#"/>
 
             <Kaka kakaLevel={props.kakaLevel} kakaCleaner={props.kakaCleaner}/>
                 <img className='emotion' src={props.emotion} alt="#"/>

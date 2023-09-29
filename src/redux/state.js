@@ -12,7 +12,9 @@ import emotionSadPath from "../emotionSad.png"
 
 
 
+//после действий типа кормёжки или игры добавить запоминание таймстемпа и отталкиваясь от него можно чекать что адвно не играл и выводить алёрт "поиграй со мной"
 
+//проверка времени суток
 let today = new Date();
 let myTime= today.getHours()
     //alert(myTime)
@@ -22,10 +24,19 @@ if(myTime > 9 && myTime<20){
 }else{
     fon=night
 }
+//проверка времени суток end
 
-// добавить функцию, чекающую и выводящую алёрт  if(state.foodLevel.length < 2){alert('Я хочу есть')}
+
+// функция, чекающая и выводящая алёрт  если тамагочи голодный
+let foodChecker = ()=>{
+    if(state.foodLevel.length < 2){alert('Я хочу есть')}
+}
+//интервал ниже работает, закомментил чтоыб не спамить
+//setInterval(foodChecker, 5000);
+// функция, чекающая и выводящая алёрт  если тамагочи голодный end
+
 export let state ={
-    foodLevel:[<div className='hungryItem'><img src={shava} alt="#"/></div>],kakaLevel:[<div className='kakaItem'><img src={kaka} alt="#"/></div>], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}
+    foodLevel:[<div className='hungryItem'><img src={shava} alt="#"/></div>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}
 }
 let eatingMusic = new Audio(crispsCrunch)
 let cleaningMusic = new Audio(cleanerMusic)
@@ -74,27 +85,42 @@ function sayHi() {
     //alert(state.foodLevel.length)
 }
 
-setInterval(sayHi, 5000);
+setInterval(sayHi, 7000);
 
 
 
 export let checkEmotion = () => {
-    let emotionPicturePath =''
+
+
+
+    if( state.foodLevel.length <3 || state.kakaLevel.length>1 ){
+        state.emotion.value = 'sad'
+    }else if( state.foodLevel.length >3 && state.kakaLevel.length===0){
+        state.emotion.value = 'happy'
+    }
+
 
     switch (state.emotion.value) {
         case 'happy':
-            state.emotionPicturePath = emotionHappyPath;
+            state.emotion.emotionPicturePath = emotionHappyPath;
             break
 
         case 'normal':
-            state.emotionPicturePath = emotionNormalPath;
+            state.emotion.emotionPicturePath = emotionNormalPath;
             break
 
         case 'sad':
-            state.emotionPicturePath = emotionSadPath;
+            state.emotion.emotionPicturePath = emotionSadPath;
             break
 
+        default:
+            state.emotion.emotionPicturePath = emotionNormalPath;
+            break
     }
+    rerenderEntireTree(state)
 }
+
+setInterval(checkEmotion, 1000);
+
 
 export default state
