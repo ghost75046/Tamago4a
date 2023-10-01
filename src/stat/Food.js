@@ -12,7 +12,7 @@ import shava from "../shaverma.png";
 
 const Food = (props) => {
     return (<div>
-            комната
+
             <div className='hungryLevel'>
                 {props.foodLevel}
             </div>

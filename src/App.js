@@ -15,8 +15,10 @@ import Statistics from "./components/Statistics";
 
 
 let today = new Date();
-//let myTime= today.getHours()
-let myTime =23
+let myTime= today.getHours()
+
+//ниже тестер со временм забитым вручную
+//let myTime =23
  let fon
 if(myTime > 9 && myTime<20){
     fon=day
@@ -48,6 +50,10 @@ const App = (props) => {
             <img className='fon' src={fon} alt="#"/>
 
             <div className='myEgg'>
+
+                <div className='cloudWithText'>
+                    <p>{props.cloudWithText}</p>
+                </div>
             <Food foodLevel={props.foodLevel} feeder={props.feeder} rerenderEntireTree={props.rerenderEntireTree}/>
 
 
@@ -55,7 +61,8 @@ const App = (props) => {
 
             <Kaka kakaLevel={props.kakaLevel} kakaCleaner={props.kakaCleaner}/>
                 <img className='emotion' src={props.emotion} alt="#"/>
-            <GamingButtons feeder={props.feeder} kakaCleaner={props.kakaCleaner}/>
+            <GamingButtons feeder={props.feeder} kakaCleaner={props.kakaCleaner} playing={props.playing}/>
+
             </div>
         </div>
 

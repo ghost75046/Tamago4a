@@ -101,7 +101,7 @@
 .hungryLevel {
     display: flex;
     flex-direction: row;
-    margin-top: 200px;
+    margin-top: 50px;
     margin-left: 210px;
     /*border: solid black;*/
 }
@@ -123,7 +123,7 @@
 }
 
 .fon {
-    width: 50px;
+    width: 350px;
 }
 
 .emotion {
@@ -160,4 +160,20 @@
     height:200px;
     margin-top: 20px;
     margin-left: 250px;
+}
+
+.cloudWithText{
+    /*background-color: orange;*/
+    background-image: url("./comicsCloud.png");
+    background-size: cover;
+    width: 250px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cloudWithText p{
+font-size: 26px;
 }

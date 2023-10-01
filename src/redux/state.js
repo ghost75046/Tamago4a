@@ -29,14 +29,20 @@ if(myTime > 9 && myTime<20){
 
 // функция, чекающая и выводящая алёрт  если тамагочи голодный
 let foodChecker = ()=>{
-    if(state.foodLevel.length < 2){alert('Я хочу есть')}
+    if(state.foodLevel.length < 2){
+        state.textInCloud='Я хочу есть'
+        rerenderEntireTree(state)
+        setTimeout(cloudCleaner,1000)
+    }
 }
 //интервал ниже работает, закомментил чтоыб не спамить
-//setInterval(foodChecker, 5000);
+
 // функция, чекающая и выводящая алёрт  если тамагочи голодный end
 
+
+//let textInCloud ='Murrrrr...'
 export let state ={
-    foodLevel:[<div className='hungryItem'><img src={shava} alt="#"/></div>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}
+    foodLevel:[<div className='hungryItem'><img src={shava} alt="#"/></div>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}, ifPlayedRecently:false,textInCloud:'Murrrrr...'
 }
 let eatingMusic = new Audio(crispsCrunch)
 let cleaningMusic = new Audio(cleanerMusic)
@@ -63,7 +69,12 @@ export let  feeder = () => {
         }
     rerenderEntireTree(state)
     }else{
-        alert('Я не голодный')
+        // alert('Я не голодный')
+        state.textInCloud='Я не голодный'
+        rerenderEntireTree(state)
+        setTimeout(cloudCleaner,1000)
+
+
     }
 }
 
@@ -78,14 +89,14 @@ export let  kakaCleaner = () => {
 
 
 
-function sayHi() {
+function makeHungry() {
     if (state.foodLevel.length > 1){
     state.foodLevel.pop()
     rerenderEntireTree(state)}
     //alert(state.foodLevel.length)
 }
 
-setInterval(sayHi, 7000);
+
 
 
 
@@ -93,9 +104,9 @@ export let checkEmotion = () => {
 
 
 
-    if( state.foodLevel.length <3 || state.kakaLevel.length>1 ){
+    if( state.foodLevel.length <3 || state.kakaLevel.length>1 || state.ifPlayedRecently===false){
         state.emotion.value = 'sad'
-    }else if( state.foodLevel.length >3 && state.kakaLevel.length===0){
+    }else if( state.foodLevel.length >3 && state.kakaLevel.length===0 && state.ifPlayedRecently===true){
         state.emotion.value = 'happy'
     }
 
@@ -118,9 +129,46 @@ export let checkEmotion = () => {
             break
     }
     rerenderEntireTree(state)
+
+    if(state.kakaLevel.length>0){
+        state.textInCloud='Проснись, я обосрался'
+        rerenderEntireTree(state)
+        setTimeout(cloudCleaner,1000)
+    }
 }
 
+
+
+
+
+export let playing = () =>{
+state.ifPlayedRecently=true
+
+    state.textInCloud='Спасибо за игру'
+    rerenderEntireTree(state)
+    setTimeout(cloudCleaner,1000)
+
+
+}
+let palyingTimeout = () =>{
+    state.ifPlayedRecently=false
+        state.textInCloud='Поиграй со мной'
+    rerenderEntireTree(state)
+    setTimeout(cloudCleaner,1000)
+}
+let cloudCleaner= ()=>{
+    state.textInCloud='Mrrrrr...'
+    //setTimeout(rerenderEntireTree(state),7000)
+}
+
+
+//Интервалы
 setInterval(checkEmotion, 1000);
+setInterval(palyingTimeout, 15000);
+setInterval(foodChecker, 5000);
+setInterval(makeHungry, 7000);
 
 
+
+//export let cloudWithText=<div className='cloudWithText'>{textInCloud}</div>
 export default state
