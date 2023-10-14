@@ -10,9 +10,15 @@ import emotionNormalPath from "../emotionNormal.png"
 import emotionHappyPath from "../emotionHappy.png"
 import emotionSadPath from "../emotionSad.png"
 
-
+//хранилище аудио
+const eatingMusic = new Audio(crispsCrunch)
+const cleaningMusic = new Audio(cleanerMusic)
 
 //после действий типа кормёжки или игры добавить запоминание таймстемпа и отталкиваясь от него можно чекать что адвно не играл и выводить алёрт "поиграй со мной"
+//добавить возможность спать по ночам
+//добавить звуки появления какашек и звук урчания живота, если осталось мало очков еды(можно синхронно с надписью "я голодный")
+//добавить новертацию SCSS в CSS
+//как задавать background-image переменной? фон в зависимости от времени суток
 
 //проверка времени суток
 let today = new Date();
@@ -35,18 +41,20 @@ let foodChecker = ()=>{
         setTimeout(cloudCleaner,1000)
     }
 }
-//интервал ниже работает, закомментил чтоыб не спамить
+
 
 // функция, чекающая и выводящая алёрт  если тамагочи голодный end
 
 
-//let textInCloud ='Murrrrr...'
-export let state ={
-    foodLevel:[<div className='hungryItem'><img src={shava} alt="#"/></div>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}, ifPlayedRecently:false,textInCloud:'Murrrrr...'
-}
-let eatingMusic = new Audio(crispsCrunch)
-let cleaningMusic = new Audio(cleanerMusic)
 
+export let state ={
+    foodLevel:[<div className='hungryItem'><img src={shava} alt="#"/></div>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}, ifPlayedRecently:false,textInCloud:'Murrrrr...',currentFon:fon
+}
+
+
+
+
+//питомец ходит в туалет
 export let kakaPush  = () => {
     if (state.kakaLevel.length < 6) {
 
@@ -58,6 +66,8 @@ export let kakaPush  = () => {
         alert('dieInShit')
     }
 }
+
+//кормёжка
 export let  feeder = () => {
     if (state.foodLevel.length < 6) {
 
@@ -80,6 +90,7 @@ export let  feeder = () => {
 
 
 
+//уборка за питомцем
 export let  kakaCleaner = () => {
             state.kakaLevel.pop()
         cleaningMusic.play()
@@ -88,7 +99,7 @@ export let  kakaCleaner = () => {
 }
 
 
-
+//повышение уровня голода
 function makeHungry() {
     if (state.foodLevel.length > 1){
     state.foodLevel.pop()
@@ -97,9 +108,7 @@ function makeHungry() {
 }
 
 
-
-
-
+//проверка и изменение настроения. В будущем вместо интервала сделать изменение эмоции по изменению данных в стэйте
 export let checkEmotion = () => {
 
 
@@ -140,7 +149,7 @@ export let checkEmotion = () => {
 
 
 
-
+//игра с питомцем
 export let playing = () =>{
 state.ifPlayedRecently=true
 
@@ -150,12 +159,16 @@ state.ifPlayedRecently=true
 
 
 }
+
+//таймаут до следующего желания поиграть
 let palyingTimeout = () =>{
     state.ifPlayedRecently=false
         state.textInCloud='Поиграй со мной'
     rerenderEntireTree(state)
     setTimeout(cloudCleaner,1000)
 }
+
+//обнуление текста в облаке
 let cloudCleaner= ()=>{
     state.textInCloud='Mrrrrr...'
     //setTimeout(rerenderEntireTree(state),7000)

@@ -86,14 +86,27 @@
     box-shadow: 0 0 3px #2196F3;
 }
 
+.mainDiv{
+    padding-top: 50px;
+    background-color: antiquewhite ;
+    height: 1080px;
+    /*background-image: url("/home/ghost75046/Git/Tamago4a/src/night.jpg");*/
+    /*background-size: cover;*/
+
+
+}
+
 .myEgg {
     margin: 0 auto;
 
-    background-image: url("/home/ghost75046/Git/Tamago4a/src/defaultEggnew.png");
-    background-size: cover;
+    background-image: url("/home/ghost75046/Git/Tamago4a/src/defaultEggneNoGlass.png"), url("/home/ghost75046/Git/Tamago4a/src/day.jpg");
+    background-size: cover, 350px ;
+    background-repeat: no-repeat;
+    background-position: 0 0, 200px 230px;
+    /*100px bottom*/
     width: 700px;
-    height: 750px;
-    background-color: green;
+    height: 795px;
+    /*background-color: green;*/
     /*border: solid black;*/
 }
 
