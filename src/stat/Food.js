@@ -1,5 +1,5 @@
 import React from 'react';
-import shava from "../shaverma.png";
+import shava from "../images/shaverma.png";
 
 
 //перенёс в index.js

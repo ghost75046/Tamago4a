@@ -99,7 +99,7 @@
 .myEgg {
     margin: 0 auto;
 
-    background-image: url("/home/ghost75046/Git/Tamago4a/src/defaultEggneNoGlass.png"), url("/home/ghost75046/Git/Tamago4a/src/day.jpg");
+    background-image: url("/src/images/defaultEggneNoGlass.png"), url("/src/images/day.jpg");
     background-size: cover, 350px ;
     background-repeat: no-repeat;
     background-position: 0 0, 200px 230px;
@@ -177,7 +177,7 @@
 
 .cloudWithText{
     /*background-color: orange;*/
-    background-image: url("./comicsCloud.png");
+    background-image: url("images/comicsCloud.png");
     background-size: cover;
     width: 250px;
     height: 160px;

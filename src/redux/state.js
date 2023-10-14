@@ -1,14 +1,14 @@
-import shava from "../shaverma.png";
-import kaka from "../kaka.png"
+import shava from "../images/shaverma.png";
+import kaka from "../images/kaka.png"
 import React from "react";
 import {rerenderEntireTree} from "../render";
-import crispsCrunch from "../crispsCrunch.mp3";
-import cleanerMusic from "../cleanerMusic.mp3"
-import day from './../day.jpg'
-import night from './../night.jpg'
-import emotionNormalPath from "../emotionNormal.png"
-import emotionHappyPath from "../emotionHappy.png"
-import emotionSadPath from "../emotionSad.png"
+import crispsCrunch from "../audio/crispsCrunch.mp3";
+import cleanerMusic from "../audio/cleanerMusic.mp3"
+import day from '../images/day.jpg'
+import night from '../images/night.jpg'
+import emotionNormalPath from "../images/emotionNormal.png"
+import emotionHappyPath from "../images/emotionHappy.png"
+import emotionSadPath from "../images/emotionSad.png"
 
 //хранилище аудио
 const eatingMusic = new Audio(crispsCrunch)

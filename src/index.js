@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import users from "./MySql";
-import shava from "./shaverma.png";
+import shava from "./images/shaverma.png";
 import state from './redux/state'
 import {feeder} from './redux/state'
 import {rerenderEntireTree} from "./render";

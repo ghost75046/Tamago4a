@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css'
 import Food from "./stat/Food";
 import Kaka from "./stat/Kaka";
-import Delya from './Delya.png'
+import Delya from './images/Delya.png'
 import GamingButtons from "./components/GamingButtons";
 
 
