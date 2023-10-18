@@ -13,7 +13,7 @@ import shava from "../images/shaverma.png";
 const Food = (props) => {
     return (<div>
 
-            <div className='hungryLevel'>
+            <div className='hungryLevel' >
                 {props.foodLevel}
             </div>
             {/*<button onClick={props.feeder}>Покормить</button>*/}

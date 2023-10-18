@@ -21,7 +21,26 @@ const cleaningMusic = new Audio(cleanerMusic)
 //как задавать background-image переменной? фон в зависимости от времени суток
 
 //проверка времени суток
-let today = new Date();
+let today  = new Date()
+
+//дата для логгера
+let loggerTimer = () =>{
+    today = new Date();
+    let logTime=  `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()} ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}.${today.getMilliseconds()} `
+    return logTime}
+// setInterval(ttoday, 1000);
+
+/*const ttoday = () => {
+    today = new Date();
+
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+}*/
+// setInterval(today, 1000);
+
 let myTime= today.getHours()
     //alert(myTime)
 export let fon
@@ -31,6 +50,9 @@ if(myTime > 9 && myTime<20){
     fon=night
 }
 //проверка времени суток end
+//время для логов
+
+
 
 
 // функция, чекающая и выводящая алёрт  если тамагочи голодный
@@ -59,7 +81,7 @@ export let kakaPush  = () => {
     if (state.kakaLevel.length < 6) {
 
         state.kakaLevel.push(<div className='kakaItem'><img src={kaka} alt="#"/></div>)
-
+        console.log( `${loggerTimer()} afterEatingKakaLevel = ${state.kakaLevel.length}`)
         rerenderEntireTree(state)
     }else{
 
@@ -74,15 +96,19 @@ export let  feeder = () => {
     state.foodLevel.push(<div className='hungryItem'><img src={shava} alt="#"/></div>)
     eatingMusic.play()
 
+
         if (state.kakaLevel.length < 7) {
             setTimeout(kakaPush, 5000);
         }
     rerenderEntireTree(state)
+        console.log( `${loggerTimer()} currentFoodLevel = ${state.foodLevel.length}`)
     }else{
         // alert('Я не голодный')
         state.textInCloud='Я не голодный'
+        console.log( `${loggerTimer()} notHungry`)
         rerenderEntireTree(state)
         setTimeout(cloudCleaner,1000)
+
 
 
     }
@@ -94,6 +120,7 @@ export let  feeder = () => {
 export let  kakaCleaner = () => {
             state.kakaLevel.pop()
         cleaningMusic.play()
+        console.log( `${loggerTimer()} afterCleaningKakaLevel = ${state.kakaLevel.length}`)
         rerenderEntireTree(state)
 
 }
@@ -110,7 +137,7 @@ function makeHungry() {
 
 //проверка и изменение настроения. В будущем вместо интервала сделать изменение эмоции по изменению данных в стэйте
 export let checkEmotion = () => {
-
+let previousEmotion=state.emotion.value
 
 
     if( state.foodLevel.length <3 || state.kakaLevel.length>1 || state.ifPlayedRecently===false){
@@ -137,10 +164,14 @@ export let checkEmotion = () => {
             state.emotion.emotionPicturePath = emotionNormalPath;
             break
     }
+
+    if(previousEmotion!==state.emotion.value)
+    console.log( `${loggerTimer()} currentEmotion = ${state.emotion.value}`)
     rerenderEntireTree(state)
 
     if(state.kakaLevel.length>0){
         state.textInCloud='Проснись, я обосрался'
+        console.log( `${loggerTimer()} needToClean `)
         rerenderEntireTree(state)
         setTimeout(cloudCleaner,1000)
     }
@@ -154,6 +185,7 @@ export let playing = () =>{
 state.ifPlayedRecently=true
 
     state.textInCloud='Спасибо за игру'
+    console.log( `${loggerTimer()} playTime `)
     rerenderEntireTree(state)
     setTimeout(cloudCleaner,1000)
 
@@ -164,6 +196,7 @@ state.ifPlayedRecently=true
 let palyingTimeout = () =>{
     state.ifPlayedRecently=false
         state.textInCloud='Поиграй со мной'
+    console.log( `${loggerTimer()} needToPlay `)
     rerenderEntireTree(state)
     setTimeout(cloudCleaner,1000)
 }
