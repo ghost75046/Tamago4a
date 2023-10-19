@@ -8,7 +8,7 @@ export let rerenderEntireTree = () => {
 
     root.render(
         <React.StrictMode>
-            <App  foodLevel={state.foodLevel} feeder={feeder} kakaLevel={state.kakaLevel} kakaCleaner={kakaCleaner} rerenderEntireTree={rerenderEntireTree} emotion={state.emotion.emotionPicturePath} playing={playing} cloudWithText={state.textInCloud} currentFont={state.currentFon}/>
+            <App  foodLevel={state.foodLevel} feeder={feeder} kakaLevel={state.kakaLevel} kakaCleaner={kakaCleaner} rerenderEntireTree={rerenderEntireTree} emotion={state.emotion.emotionPicturePath} playing={playing} cloudWithText={state.textInCloud} currentFont={state.currentFon} />
         </React.StrictMode>
     );
 }

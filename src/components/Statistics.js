@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css'
-import Food from "../stat/Food";
+import Food from "./Food";
 
 
 const GamingButtons = (props) => {

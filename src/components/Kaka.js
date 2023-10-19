@@ -1,5 +1,5 @@
 import React from 'react';
-import shava from "../images/shaverma.png";
+import classes from './Kaka.module.css'
 
 
 //перенёс в index.js
@@ -10,17 +10,18 @@ import shava from "../images/shaverma.png";
 // }
 
 
-const Food = (props) => {
+const Kaka = (props) => {
     return (<div>
 
-            <div className='hungryLevel' >
-                {props.foodLevel}
+            <div className={classes.kakaLevel}>
+
+                {props.kakaLevel}
             </div>
-            {/*<button onClick={props.feeder}>Покормить</button>*/}
+            {/*<button onClick={props.kakaCleaner}>убрать</button>*/}
 
 
         </div>
     )
 }
 
-export default Food
+export default Kaka

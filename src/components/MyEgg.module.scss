@@ -1,0 +1,13 @@
+.myEgg {
+  margin: 0 auto;
+
+  background-image: url("/src/images/defaultEggneNoGlass.png"), url("/src/images/day.jpg");
+  background-size: cover, 350px ;
+  background-repeat: no-repeat;
+  background-position: 0 0, 200px 230px;
+  /*100px bottom*/
+  width: 700px;
+  height: 795px;
+  /*background-color: green;*/
+  /*border: solid black;*/
+}

@@ -9,6 +9,8 @@ import night from '../images/night.jpg'
 import emotionNormalPath from "../images/emotionNormal.png"
 import emotionHappyPath from "../images/emotionHappy.png"
 import emotionSadPath from "../images/emotionSad.png"
+import KakaItem from "../components/.sass-cache/KakaItem";
+import HungryItem from "../components/HungryItem";
 
 //хранилище аудио
 const eatingMusic = new Audio(crispsCrunch)
@@ -70,7 +72,7 @@ let foodChecker = ()=>{
 
 
 export let state ={
-    foodLevel:[<div className='hungryItem'><img src={shava} alt="#"/></div>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}, ifPlayedRecently:false,textInCloud:'Murrrrr...',currentFon:fon
+    foodLevel:[<HungryItem shavaImg={shava}/>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}, ifPlayedRecently:false,textInCloud:'Murrrrr...',currentFon:fon
 }
 
 
@@ -80,7 +82,7 @@ export let state ={
 export let kakaPush  = () => {
     if (state.kakaLevel.length < 6) {
 
-        state.kakaLevel.push(<div className='kakaItem'><img src={kaka} alt="#"/></div>)
+        state.kakaLevel.push(<KakaItem/>)
         console.log( `${loggerTimer()} afterEatingKakaLevel = ${state.kakaLevel.length}`)
         rerenderEntireTree(state)
     }else{
@@ -93,7 +95,7 @@ export let kakaPush  = () => {
 export let  feeder = () => {
     if (state.foodLevel.length < 6) {
 
-    state.foodLevel.push(<div className='hungryItem'><img src={shava} alt="#"/></div>)
+    state.foodLevel.push(<HungryItem shavaImg={shava}/>)
     eatingMusic.play()
 
 
