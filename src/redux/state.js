@@ -9,8 +9,9 @@ import night from '../images/night.jpg'
 import emotionNormalPath from "../images/emotionNormal.png"
 import emotionHappyPath from "../images/emotionHappy.png"
 import emotionSadPath from "../images/emotionSad.png"
-import KakaItem from "../components/.sass-cache/KakaItem";
-import HungryItem from "../components/HungryItem";
+import KakaItem from "../components/stats/Kaka/KakaItem";
+import HungryItem from "../components/stats/Food/HungryItem";
+import defaultEgg from "../images/defaultEggneNoGlass.png"
 
 //хранилище аудио
 const eatingMusic = new Audio(crispsCrunch)
@@ -24,6 +25,7 @@ const cleaningMusic = new Audio(cleanerMusic)
 
 //проверка времени суток
 let today  = new Date()
+
 
 //дата для логгера
 let loggerTimer = () =>{
@@ -44,6 +46,8 @@ let loggerTimer = () =>{
 // setInterval(today, 1000);
 
 let myTime= today.getHours()
+
+
     //alert(myTime)
 export let fon
 if(myTime > 9 && myTime<20){
@@ -72,7 +76,7 @@ let foodChecker = ()=>{
 
 
 export let state ={
-    foodLevel:[<HungryItem shavaImg={shava}/>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}, ifPlayedRecently:false,textInCloud:'Murrrrr...',currentFon:fon
+    foodLevel:[<HungryItem shavaImg={shava}/>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}, ifPlayedRecently:false,textInCloud:'Murrrrr...',currentFon:fon,currentEgg:defaultEgg
 }
 
 
@@ -82,7 +86,7 @@ export let state ={
 export let kakaPush  = () => {
     if (state.kakaLevel.length < 6) {
 
-        state.kakaLevel.push(<KakaItem/>)
+        state.kakaLevel.push(<KakaItem kaka={kaka}/>)
         console.log( `${loggerTimer()} afterEatingKakaLevel = ${state.kakaLevel.length}`)
         rerenderEntireTree(state)
     }else{

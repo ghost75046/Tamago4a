@@ -99,31 +99,21 @@
 
 
 
-.myEgg {
+/*.myEgg {
     margin: 0 auto;
 
-    background-image: url("/src/images/defaultEggneNoGlass.png"), url("/src/images/day.jpg");
+    background-image: url("/src/images/defaultEggneNoGlass.png"), url("/src/images/night.jpg");
     background-size: cover, 350px ;
     background-repeat: no-repeat;
     background-position: 0 0, 200px 230px;
-    /*100px bottom*/
+    !*100px bottom*!
     width: 700px;
     height: 795px;
-    /*background-color: green;*/
-    /*border: solid black;*/
-}
+    !*background-color: green;*!
+    !*border: solid black;*!
+}*/
 
-.cloudWithText{
-    /*background-color: orange;*/
-    background-image: url("images/comicsCloud.png");
-    background-size: cover;
-    width: 250px;
-    height: 160px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-}
 
 
 
@@ -131,18 +121,8 @@
     width: 350px;
 }
 
-.emotion {
-    width: 50px;
-    margin-top: 15px;
-    margin-left:300px;
-}
 
 
 
-.Delya{
-    /*border: solid black;*/
-    height:200px;
-    margin-top: 20px;
-    margin-left: 250px;
-}
+
 
