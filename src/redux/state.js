@@ -1,19 +1,22 @@
-import shava from "../images/shaverma.png";
-import kaka from "../images/kaka.png"
 import React from "react";
+//functions
 import {rerenderEntireTree} from "../render";
+import KakaItem from "../components/stats/Kaka/KakaItem";
+import HungryItem from "../components/stats/Food/HungryItem";
+//audio
 import crispsCrunch from "../audio/crispsCrunch.mp3";
 import cleanerMusic from "../audio/cleanerMusic.mp3"
 import mrrrMusic from "../audio/Mrrr.mp3"
 import MeowSound from "../audio/Meow.mp3"
 import PukSound from "../audio/Puk.mp3"
+//images
+import shava from "../images/shaverma.png";
+import kaka from "../images/kaka.png"
 import day from '../images/day.jpg'
 import night from '../images/night.jpg'
 import emotionNormalPath from "../images/emotionNormal.png"
 import emotionHappyPath from "../images/emotionHappy.png"
 import emotionSadPath from "../images/emotionSad.png"
-import KakaItem from "../components/stats/Kaka/KakaItem";
-import HungryItem from "../components/stats/Food/HungryItem";
 import defaultEgg from "../images/defaultEggneNoGlass.png"
 
 //хранилище аудио
@@ -23,46 +26,30 @@ const mrrringMusic = new Audio(mrrrMusic)
 const MeowingSound = new Audio(MeowSound)
 const PukingSound = new Audio(PukSound)
 
-//после действий типа кормёжки или игры добавить запоминание таймстемпа и отталкиваясь от него можно чекать что адвно не играл и выводить алёрт "поиграй со мной"
-//добавить возможность спать по ночам
-//добавить звуки появления какашек и звук урчания живота, если осталось мало очков еды(можно синхронно с надписью "я голодный")
-//добавить новертацию SCSS в CSS
-//как задавать background-image переменной? фон в зависимости от времени суток
 
-//проверка времени суток
+//добавить возможность спать по ночам
+//добавить  звук урчания живота, если осталось мало очков еды(можно синхронно с надписью "я голодный") | звучит так себе, мб и не добавлять
+
+
+//получаем текущую дату
 let today  = new Date()
 
-
-//дата для логгера
+// форматирование даты для логгера
 let loggerTimer = () =>{
     today = new Date();
     let logTime=  `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()} ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}.${today.getMilliseconds()} `
     return logTime}
-// setInterval(ttoday, 1000);
 
-/*const ttoday = () => {
-    today = new Date();
 
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const day = String(today.getDate()).padStart(2, '0');
 
-    return `${year}-${month}-${day}`;
-}*/
-// setInterval(today, 1000);
-
+//смена фона в окнах комнаты в зависимости от времени суток
 let myTime= today.getHours()
-
-
-    //alert(myTime)
 export let fon
 if(myTime > 9 && myTime<20){
     fon=day
 }else{
     fon=night
 }
-//проверка времени суток end
-
 
 
 //генерируем уникальные ключи для шкалы еды и каках
@@ -81,7 +68,7 @@ function generateRandomWord(length) {
 
 
 
-// функция, чекающая и выводящая алёрт  если тамагочи голодный
+// функция, чекающая если тамагочи голодный и выводящая инфу об этом
 let foodChecker = ()=>{
     if(state.foodLevel.length < 2){
         state.textInCloud='Я хочу есть'
@@ -90,15 +77,10 @@ let foodChecker = ()=>{
     }
 }
 
-
-// функция, чекающая и выводящая алёрт  если тамагочи голодный end
-
-
-
+//собственно сам state
 export let state ={
     foodLevel:[<HungryItem shavaImg={shava} key={generateRandomWord(13)}/>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}, ifPlayedRecently:false,textInCloud:'Murrrrr...',currentFon:fon,currentEgg:defaultEgg
 }
-
 
 
 
@@ -130,7 +112,7 @@ export let  feeder = () => {
     rerenderEntireTree(state)
         console.log( `${loggerTimer()} currentFoodLevel = ${state.foodLevel.length}`)
     }else{
-        // alert('Я не голодный')
+
         state.textInCloud='Я не голодный'
         console.log( `${loggerTimer()} notHungry`)
         rerenderEntireTree(state)
@@ -158,7 +140,7 @@ function makeHungry() {
     if (state.foodLevel.length > 1){
     state.foodLevel.pop()
     rerenderEntireTree(state)}
-    //alert(state.foodLevel.length)
+
 }
 
 
@@ -167,9 +149,9 @@ export let checkEmotion = () => {
 let previousEmotion=state.emotion.value
 
 
-    if( state.foodLevel.length <3 || state.kakaLevel.length>1 || state.ifPlayedRecently===false){
+    if( state.foodLevel.length <3 || state.kakaLevel.length>1 || !state.ifPlayedRecently){
         state.emotion.value = 'sad'
-    }else if( state.foodLevel.length >3 && state.kakaLevel.length===0 && state.ifPlayedRecently===true){
+    }else if( state.foodLevel.length >3 && state.kakaLevel.length===0 && state.ifPlayedRecently){
         state.emotion.value = 'happy'
     }
 
@@ -199,6 +181,7 @@ let previousEmotion=state.emotion.value
     console.log( `${loggerTimer()} currentEmotion = ${state.emotion.value}`)
     rerenderEntireTree(state)
 
+//оповещение о необходимости уборки
     if(state.kakaLevel.length>0){
         state.textInCloud='Проснись, я обосрался'
         console.log( `${loggerTimer()} needToClean `)
@@ -240,12 +223,17 @@ let cloudCleaner= ()=>{
 
 
 //Интервалы
+
+//проверка эмоции
 setInterval(checkEmotion, 1000);
+//таймуат до следующего желания поиграть
 setInterval(palyingTimeout, 15000);
+//проверка уровная сытости
 setInterval(foodChecker, 5000);
+//уменьшение уровня сытости
 setInterval(makeHungry, 7000);
 
 
 
-//export let cloudWithText=<div className='cloudWithText'>{textInCloud}</div>
+
 export default state
