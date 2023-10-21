@@ -56,9 +56,10 @@ if(myTime > 9 && myTime<20){
     fon=night
 }
 //проверка времени суток end
-//время для логов
 
 
+
+//генерируем уникальные ключи для шкалы еды и каках
 function generateRandomWord(length) {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     let randomWord = '';

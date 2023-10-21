@@ -2,12 +2,14 @@ import React from 'react';
 import './App.css'
 import Food from "./components/stats/Food/Food";
 import Kaka from "./components/stats/Kaka/Kaka";
-import Delya from './images/Delya.png'
+import Delya from './images/DelyaGif2.gif'
+//import Delya from './images/image-862209192214338119696.gif'
 import GamingButtons from "./components/GamingButtons";
 import MyEgg from "./components/MyEgg";
 import CloudWithText from "./components/CloudWithText";
 import Pet from "./components/Pet";
 import Emotion from "./components/stats/Emotion";
+
 
 
 
