@@ -59,6 +59,19 @@ if(myTime > 9 && myTime<20){
 //время для логов
 
 
+function generateRandomWord(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let randomWord = '';
+
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        randomWord += characters.charAt(randomIndex);
+    }
+
+    return randomWord;
+}
+
+
 
 
 // функция, чекающая и выводящая алёрт  если тамагочи голодный
@@ -76,7 +89,7 @@ let foodChecker = ()=>{
 
 
 export let state ={
-    foodLevel:[<HungryItem shavaImg={shava}/>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}, ifPlayedRecently:false,textInCloud:'Murrrrr...',currentFon:fon,currentEgg:defaultEgg
+    foodLevel:[<HungryItem shavaImg={shava} key={generateRandomWord(13)}/>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}, ifPlayedRecently:false,textInCloud:'Murrrrr...',currentFon:fon,currentEgg:defaultEgg
 }
 
 
@@ -86,7 +99,7 @@ export let state ={
 export let kakaPush  = () => {
     if (state.kakaLevel.length < 6) {
 
-        state.kakaLevel.push(<KakaItem kaka={kaka}/>)
+        state.kakaLevel.push(<KakaItem kaka={kaka} key={generateRandomWord(13)}/>)
         console.log( `${loggerTimer()} afterEatingKakaLevel = ${state.kakaLevel.length}`)
         rerenderEntireTree(state)
     }else{
@@ -99,7 +112,7 @@ export let kakaPush  = () => {
 export let  feeder = () => {
     if (state.foodLevel.length < 6) {
 
-    state.foodLevel.push(<HungryItem shavaImg={shava}/>)
+    state.foodLevel.push(<HungryItem shavaImg={shava} key={generateRandomWord(13)}/>)
     eatingMusic.play()
 
 
