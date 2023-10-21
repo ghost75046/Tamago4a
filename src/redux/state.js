@@ -4,6 +4,9 @@ import React from "react";
 import {rerenderEntireTree} from "../render";
 import crispsCrunch from "../audio/crispsCrunch.mp3";
 import cleanerMusic from "../audio/cleanerMusic.mp3"
+import mrrrMusic from "../audio/Mrrr.mp3"
+import MeowSound from "../audio/Meow.mp3"
+import PukSound from "../audio/Puk.mp3"
 import day from '../images/day.jpg'
 import night from '../images/night.jpg'
 import emotionNormalPath from "../images/emotionNormal.png"
@@ -16,6 +19,9 @@ import defaultEgg from "../images/defaultEggneNoGlass.png"
 //хранилище аудио
 const eatingMusic = new Audio(crispsCrunch)
 const cleaningMusic = new Audio(cleanerMusic)
+const mrrringMusic = new Audio(mrrrMusic)
+const MeowingSound = new Audio(MeowSound)
+const PukingSound = new Audio(PukSound)
 
 //после действий типа кормёжки или игры добавить запоминание таймстемпа и отталкиваясь от него можно чекать что адвно не играл и выводить алёрт "поиграй со мной"
 //добавить возможность спать по ночам
@@ -101,6 +107,7 @@ export let kakaPush  = () => {
     if (state.kakaLevel.length < 6) {
 
         state.kakaLevel.push(<KakaItem kaka={kaka} key={generateRandomWord(13)}/>)
+        PukingSound.play()
         console.log( `${loggerTimer()} afterEatingKakaLevel = ${state.kakaLevel.length}`)
         rerenderEntireTree(state)
     }else{
@@ -170,6 +177,8 @@ let previousEmotion=state.emotion.value
     switch (state.emotion.value) {
         case 'happy':
             state.emotion.emotionPicturePath = emotionHappyPath;
+            mrrringMusic.play()
+
             break
 
         case 'normal':
@@ -178,6 +187,7 @@ let previousEmotion=state.emotion.value
 
         case 'sad':
             state.emotion.emotionPicturePath = emotionSadPath;
+            mrrringMusic.pause()
             break
 
         default:
@@ -205,6 +215,7 @@ export let playing = () =>{
 state.ifPlayedRecently=true
 
     state.textInCloud='Спасибо за игру'
+    MeowingSound.play()
     console.log( `${loggerTimer()} playTime `)
     rerenderEntireTree(state)
     setTimeout(cloudCleaner,1000)
