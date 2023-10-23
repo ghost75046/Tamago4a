@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,aAAc;EACZ,KAAK,EAAE,IAAI",
+"sources": ["KakaItem.module.scss"],
+"names": [],
+"file": "KakaItem.module.css"
+}

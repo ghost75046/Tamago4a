@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,MAAO;EACL,MAAM,EAAE,MAAM;EAEd,gBAAgB,EAAE,sEAAsE;EACxF,eAAe,EAAE,YAAY;EAC7B,iBAAiB,EAAE,SAAS;EAC5B,mBAAmB,EAAE,gBAAgB;EACrC,gBAAgB;EAChB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,4BAA4B;EAC5B,wBAAwB",
+"sources": ["MyEgg.module.scss"],
+"names": [],
+"file": "MyEgg.module.css"
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,UAAW;EACT,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,WAAW,EAAE,KAAK;EAElB,wBAAwB",
+"sources": ["Kaka.module.scss"],
+"names": [],
+"file": "Kaka.module.css"
+}

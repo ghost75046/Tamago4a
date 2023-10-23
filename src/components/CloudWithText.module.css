@@ -1,0 +1,14 @@
+.cloudWithText {
+  /*background-color: orange;*/
+  background-image: url("../images/comicsCloud.png");
+  background-size: cover;
+  width: 250px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .cloudWithText p {
+    font-size: 26px;
+    text-align: center; }
+
+/*# sourceMappingURL=CloudWithText.module.css.map */

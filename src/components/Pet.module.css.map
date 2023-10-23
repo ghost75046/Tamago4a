@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAI;EACF,wBAAwB;EACxB,MAAM,EAAC,KAAK;EACZ,UAAU,EAAE,IAAI;EAChB,WAAW,EAAE,KAAK",
+"sources": ["Pet.module.scss"],
+"names": [],
+"file": "Pet.module.css"
+}
