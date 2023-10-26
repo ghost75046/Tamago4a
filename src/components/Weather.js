@@ -2,6 +2,7 @@ import React from "react";
 
 
 //в хроме navigator.geolocation не работает, пока тестил на мозиле
+//test
 const Weather = (props) => {
     let mainImg
     const api = '02f6bf99ef27b2a8abe008cfb6daa12b';
