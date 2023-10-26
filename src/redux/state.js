@@ -183,7 +183,7 @@ let previousEmotion=state.emotion.value
 
 //оповещение о необходимости уборки
     if(state.kakaLevel.length>0){
-        state.textInCloud='Проснись, я обосрался'
+        state.textInCloud='Время убирать какахи'
         console.log( `${loggerTimer()} needToClean `)
         rerenderEntireTree(state)
         setTimeout(cloudCleaner,1000)
