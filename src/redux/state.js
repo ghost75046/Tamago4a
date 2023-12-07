@@ -36,9 +36,9 @@ let today  = new Date()
 
 // форматирование даты для логгера
 let loggerTimer = () =>{
-    today = new Date();
-    let logTime=  `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()} ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}.${today.getMilliseconds()} `
-    return logTime}
+    let today  = new Date()
+    return `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()} ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}.${today.getMilliseconds()} `
+    }
 
 
 
@@ -68,6 +68,8 @@ function generateRandomWord(length) {
 
 
 
+
+
 // функция, чекающая если тамагочи голодный и выводящая инфу об этом
 let foodChecker = ()=>{
     if(state.foodLevel.length < 2){
@@ -77,15 +79,30 @@ let foodChecker = ()=>{
     }
 }
 
+let myBackgroundColor= 'antiquewhite'
+export let darkTheme = () =>{
+
+    if(state.backgroundColor == 'antiquewhite'){
+        state.backgroundColor = 'gray'
+    }else if(state.backgroundColor == 'gray'){
+        state.backgroundColor = 'antiquewhite'
+    }
+    // state.backgroundColor = 'antiquewhite' ? 'gray' : 'antiquewhite'
+    rerenderEntireTree(state)
+    console.log(myBackgroundColor, state.backgroundColor)
+
+}
+
+
 //собственно сам state
 export let state ={
-    foodLevel:[<HungryItem shavaImg={shava} key={generateRandomWord(13)}/>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}, ifPlayedRecently:false,textInCloud:'Murrrrr...',currentFon:fon,currentEgg:defaultEgg
+    foodLevel:[<HungryItem shavaImg={shava} key={generateRandomWord(13)}/>],kakaLevel:[], emotion:{value:'normal',emotionPicturePath:emotionHappyPath}, ifPlayedRecently:false,textInCloud:'Murrrrr...',currentFon:fon,currentEgg:defaultEgg,backgroundColor:myBackgroundColor
 }
 
 
 
 //питомец ходит в туалет
-export let kakaPush  = () => {
+export const kakaPush  = () => {
     if (state.kakaLevel.length < 6) {
 
         state.kakaLevel.push(<KakaItem kaka={kaka} key={generateRandomWord(13)}/>)
@@ -99,7 +116,7 @@ export let kakaPush  = () => {
 }
 
 //кормёжка
-export let  feeder = () => {
+export const  feeder = () => {
     if (state.foodLevel.length < 6) {
 
     state.foodLevel.push(<HungryItem shavaImg={shava} key={generateRandomWord(13)}/>)
@@ -126,7 +143,7 @@ export let  feeder = () => {
 
 
 //уборка за питомцем
-export let  kakaCleaner = () => {
+export const  kakaCleaner = () => {
             state.kakaLevel.pop()
         cleaningMusic.play()
         console.log( `${loggerTimer()} afterCleaningKakaLevel = ${state.kakaLevel.length}`)
@@ -145,7 +162,7 @@ function makeHungry() {
 
 
 //проверка и изменение настроения. В будущем вместо интервала сделать изменение эмоции по изменению данных в стэйте
-export let checkEmotion = () => {
+export const checkEmotion = () => {
 let previousEmotion=state.emotion.value
 
 
@@ -194,7 +211,7 @@ let previousEmotion=state.emotion.value
 
 
 //игра с питомцем
-export let playing = () =>{
+export const playing = () =>{
 state.ifPlayedRecently=true
 
     state.textInCloud='Спасибо за игру'
@@ -207,7 +224,7 @@ state.ifPlayedRecently=true
 }
 
 //таймаут до следующего желания поиграть
-let palyingTimeout = () =>{
+const palyingTimeout = () =>{
     state.ifPlayedRecently=false
         state.textInCloud='Поиграй со мной'
     console.log( `${loggerTimer()} needToPlay `)
@@ -216,7 +233,7 @@ let palyingTimeout = () =>{
 }
 
 //обнуление текста в облаке
-let cloudCleaner= ()=>{
+const cloudCleaner= ()=>{
     state.textInCloud='Mrrrrr...'
     //setTimeout(rerenderEntireTree(state),7000)
 }

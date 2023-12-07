@@ -5,14 +5,11 @@ import classes from './Food.module.css'
 
 
 const Food = (props) => {
-    return (<div>
-
+    return (
+        <div>
             <div className={classes.hungryLevel} >
                 {props.foodLevel}
             </div>
-            
-
-
         </div>
     )
 }

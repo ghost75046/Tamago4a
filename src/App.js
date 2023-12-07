@@ -14,8 +14,12 @@ const App = (props) => {
 
 
     return (
-        <div className='mainDiv' >
+        <div className='mainDiv' style={{
+             backgroundColor: `${props.backgroungColor}`
+        }}>
 
+
+            <button onClick={props.darkTheme}>darkTheme</button>
 
             <div className='myEgg' style={{
                 backgroundImage: `url(${props.currentEgg}),  url(${props.currentFont})`,
@@ -24,7 +28,7 @@ const App = (props) => {
                 backgroundPosition: 'center, 200px 230px',
                 width: '700px',
                 height: '795px',
-                margin: '0 auto',
+                margin: '0 auto'
             }}>
 
                 <CloudWithText cloudWithText={props.cloudWithText}/>

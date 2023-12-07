@@ -12,14 +12,10 @@ import classes from './Kaka.module.css'
 
 const Kaka = (props) => {
     return (<div>
-
             <div className={classes.kakaLevel}>
-
                 {props.kakaLevel}
             </div>
             {/*<button onClick={props.kakaCleaner}>убрать</button>*/}
-
-
         </div>
     )
 }

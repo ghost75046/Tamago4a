@@ -4,9 +4,10 @@ import React from "react";
 
 
 const KakaItem = (props) => {
-    return (<div className={kakaClasses.kakaItem}>
+    return (
+        <div className={kakaClasses.kakaItem}>
             <img src={props.kaka} alt="#"/>
-    </div>
+        </div>
     )
 }
 
