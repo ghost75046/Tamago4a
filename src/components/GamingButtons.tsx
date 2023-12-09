@@ -1,10 +1,10 @@
 import React from 'react';
 import '../App.css'
 import classes from './GamingButtons.module.css'
-import {playing} from "../redux/state";
 
 
-const GamingButtons = (props) => {
+
+const GamingButtons = (props:any) => {
 
     return (
         <div className={classes.GamingButtons}>

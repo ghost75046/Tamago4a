@@ -4,7 +4,7 @@ import classes from './Food.module.css'
 
 
 
-const Food = (props) => {
+const Food = (props:any) => {
     return (
         <div>
             <div className={classes.hungryLevel} >

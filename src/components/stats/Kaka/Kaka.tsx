@@ -10,7 +10,7 @@ import classes from './Kaka.module.css'
 // }
 
 
-const Kaka = (props) => {
+const Kaka = (props:any) => {
     return (<div>
             <div className={classes.kakaLevel}>
                 {props.kakaLevel}

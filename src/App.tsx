@@ -7,10 +7,10 @@ import GamingButtons from "./components/GamingButtons";
 import CloudWithText from "./components/CloudWithText";
 import Pet from "./components/Pet";
 import Emotion from "./components/stats/Emotion";
-import Weather from "./components/Weather";
+//import Weather from "./components/Weather";
 
 
-const App = (props) => {
+const App = (props:any) => {
 
 
     return (

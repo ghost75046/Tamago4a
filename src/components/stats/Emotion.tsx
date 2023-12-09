@@ -5,7 +5,7 @@ import classes from './Emotion.module.css'
 
 
 
-const Pet = (props) => {
+const Pet = (props:any) => {
     return (<div>
             <img className={classes.emotion} src={props.emotion} alt="#"/>
         </div>
