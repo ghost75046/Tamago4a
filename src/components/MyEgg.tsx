@@ -4,10 +4,10 @@ import Kaka from "./stats/Kaka/Kaka";
 import GamingButtons from "./GamingButtons";
 import React from "react";
 import classes from "./MyEgg.module.css";
-import CloudWithText from "./CloudWithText";
 
 
-const MyEgg = (props) => {
+
+const MyEgg = (props:any) => {
     return (
         <div className={classes.myEgg}>
             <Food foodLevel={props.foodLevel} feeder={props.feeder} rerenderEntireTree={props.rerenderEntireTree}/>

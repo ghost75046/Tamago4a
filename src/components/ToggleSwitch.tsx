@@ -1,9 +1,10 @@
 import React from "react";
-import classes from "./ToggleSwitch.module.css";
+//import classes from "./ToggleSwitch.module.css";
 
 
 
-const ToggleSwitch = (props) => {
+
+const ToggleSwitch = () => {
     return (<div>
             <input
                 className="react-switch-checkbox"

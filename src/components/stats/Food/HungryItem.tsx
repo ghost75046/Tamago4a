@@ -5,7 +5,7 @@ import classes from './HungryItem.module.css'
 
 
 
-const HungryItem = (props) => {
+const HungryItem = (props:any) => {
     return (
         <div className={classes.hungryItem}>
             <img src={props.shavaImg} alt="#"/>
