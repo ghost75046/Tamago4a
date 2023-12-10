@@ -1,16 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import users from "./MySql";
-import shava from "./images/shaverma.png";
 import state from './redux/state'
-import {feeder} from './redux/state'
 import {rerenderEntireTree} from "./render";
-
-
-
 
 rerenderEntireTree(state)
 // If you want to start measuring performance in your app, pass a function
