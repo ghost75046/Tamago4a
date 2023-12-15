@@ -86,9 +86,9 @@ let foodChecker = ()=>{
 let myBackgroundColor= 'antiquewhite'
 export let darkTheme = () =>{
 
-    if(state.backgroundColor == 'antiquewhite'){
+    if(state.backgroundColor === 'antiquewhite'){
         state.backgroundColor = 'gray'
-    }else if(state.backgroundColor == 'gray'){
+    }else if(state.backgroundColor === 'gray'){
         state.backgroundColor = 'antiquewhite'
     }
     // state.backgroundColor = 'antiquewhite' ? 'gray' : 'antiquewhite'
