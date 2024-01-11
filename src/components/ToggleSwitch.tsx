@@ -1,5 +1,5 @@
 import React from "react";
-//import classes from "./ToggleSwitch.module.css";
+import "./ToggleSwitch.css";
 
 
 
@@ -7,15 +7,15 @@ import React from "react";
 const ToggleSwitch = () => {
     return (<div>
             <input
-                className="react-switch-checkbox"
-                id={`react-switch-new`}
+                className="darkThemeSwitchCheckbox"
+                id="react-switch-new"
                 type="checkbox"
             />
             <label
-                className="react-switch-label"
-                htmlFor={`react-switch-new`}
+                className="darkThemeSwitchLabel"
+                htmlFor="react-switch-new"
             >
-                <span className={`react-switch-button`} />
+                <span className="darkThemeSwitchButton" />
             </label>
         </div>
     )

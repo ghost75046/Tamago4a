@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": "AAAA,cAAe;EACb,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,YAAY;EAC7B,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,IAAI;EAChB,WAAW,EAAE,KAAK;EAClB,wBAAwB;EAExB,qBAAM;IACJ,aAAa,EAAE,IAAI;IACnB,MAAM,EAAC,IAAI;IACX,KAAK,EAAC,IAAI;;AAId,YAAY;EACV,UAAU,EAAE,IAAI",
-"sources": ["GamingButtons.module.scss"],
+"sources": ["GamingButtons.scss"],
 "names": [],
-"file": "GamingButtons.module.css"
+"file": "GamingButtons.css"
 }

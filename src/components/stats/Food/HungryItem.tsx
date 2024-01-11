@@ -1,12 +1,12 @@
 import React from "react";
-import classes from './HungryItem.module.css'
+import './HungryItem.css'
 
 
 
 
 const HungryItem = (props:any) => {
     return (
-        <div className={classes.hungryItem}>
+        <div className='hungryItem'>
             <img src={props.shavaImg} alt="#"/>
         </div>
     )

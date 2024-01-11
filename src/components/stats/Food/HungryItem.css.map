@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": "AAAA,eAAgB;EACd,KAAK,EAAE,IAAI",
-"sources": ["HungryItem.module.scss"],
+"sources": ["HungryItem.scss"],
 "names": [],
-"file": "HungryItem.module.css"
+"file": "HungryItem.css"
 }

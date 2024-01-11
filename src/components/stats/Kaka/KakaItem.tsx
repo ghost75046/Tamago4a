@@ -1,11 +1,10 @@
-import kakaClasses from "./KakaItem.module.css";
-
 import React from "react";
+import "./KakaItem.css";
 
 
 const KakaItem = (props:any) => {
     return (
-        <div className={kakaClasses.kakaItem}>
+        <div className='kakaItem'>
             <img src={props.kaka} alt="#"/>
         </div>
     )

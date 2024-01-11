@@ -1,9 +1,9 @@
 import React from "react";
-import classes from "./CloudWithText.module.css";
+import  "./CloudWithText.css";
 
 
 const CloudWithText = (props:any) => {
-    return (<div className={classes.cloudWithText}>
+    return (<div className='cloudWithText'>
             <p>{props.cloudWithText}</p>
         </div>
     )

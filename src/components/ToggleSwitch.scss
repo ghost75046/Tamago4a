@@ -1,11 +1,11 @@
 
-.react-switch-checkbox {
+.darkThemeSwitchCheckbox {
   height: 0;
   width: 0;
   visibility: hidden;
 }
 
-.react-switch-label {
+.darkThemeSwitchLabel {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,7 +18,7 @@
   transition: background-color .2s;
 }
 
-.react-switch-label .react-switch-button {
+.darkThemeSwitchLabel .darkThemeSwitchButton {
   content: '';
   position: absolute;
   top: 2px;
@@ -31,11 +31,11 @@
   box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
 }
 
-.react-switch-checkbox:checked + .react-switch-label .react-switch-button {
+.darkThemeSwitchCheckbox:checked + .darkThemeSwitchCheckboxSwitchLabel .darkThemeSwitchCheckboxSwitchButton {
   left: calc(100% - 2px);
   transform: translateX(-100%);
 }
 
-.react-switch-label:active .react-switch-button {
+.darkThemeSwitchLabel:active .darkThemeSwitchButton {
   width: 60px;
 }

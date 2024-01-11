@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Kaka.module.css'
+import './Kaka.css'
 
 
 //перенёс в index.ts
@@ -12,7 +12,7 @@ import classes from './Kaka.module.css'
 
 const Kaka = (props:any) => {
     return (<div>
-            <div className={classes.kakaLevel}>
+            <div className='kakaLevel'>
                 {props.kakaLevel}
             </div>
             {/*<button onClick={props.kakaCleaner}>убрать</button>*/}

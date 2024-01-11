@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": "AAAA,cAAc;EACZ,6BAA6B;EAC7B,gBAAgB,EAAE,gCAAgC;EAElD,eAAe,EAAE,KAAK;EACtB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,gBAAC;IACC,SAAS,EAAE,IAAI;IACf,UAAU,EAAC,MAAM",
-"sources": ["CloudWithText.module.scss"],
+"sources": ["CloudWithText.scss"],
 "names": [],
-"file": "CloudWithText.module.css"
+"file": "CloudWithText.css"
 }
