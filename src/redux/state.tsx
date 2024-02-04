@@ -25,7 +25,7 @@ const eatingMusic = new Audio(crispsCrunch)
 const cleaningMusic = new Audio(cleanerMusic)
 const mrrringMusic = new Audio(mrrrMusic)
 const MeowingSound = new Audio(MeowSound)
-const PukingSound = new Audio(PukSound)
+export const PukingSound = new Audio(PukSound)
 
 //нужно убрать циклическую зависимость между state и render
 //добавить возможность спать по ночам
