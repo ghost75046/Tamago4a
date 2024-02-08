@@ -1,15 +1,10 @@
-import { observable, action } from 'mobx';
+import {observable} from "mobx";
 
-type StoreType = {
-    textInCloud: string;
-    setTextInCloud: (newText: string) => void;
-};
+const store = observable({
+    textInCloud:"MurMiay",textInCloudChange(newTextInCloud:string){
+        store.textInCloud = newTextInCloud
+    }
+})
 
-const cloudWithTextStore: StoreType = observable({
-    textInCloud: 'Murrrrr...',
-    setTextInCloud: action(function(this: StoreType, newText:string) {
-        this.textInCloud = newText;
-    })
-});
 
-export default cloudWithTextStore;
+export default store

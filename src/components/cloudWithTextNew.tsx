@@ -1,22 +1,14 @@
-import React, { useContext } from 'react';
-import StoreContext from '../context/cloudWithTextContext';
-import {logDOM} from "@testing-library/react";
+import {observer} from "mobx-react-lite";
+import store from "../store/cloudWithTextStore";
+import React from "react";
 
-const MyComponent = () => {
-    const store:any = useContext(StoreContext);
+const newCloud = () => {
 
-    const handleChangeText = () => {
-        // Изменяем значение текста через метод хранилища MobX
-        store.setTextInCloud('New text');
-        console.log('textChanged')
-    };
+    return (<div>
+        <p>{store.textInCloud}</p>
+        <button onClick={() =>store.textInCloudChange('test')}>changeCloud</button>
 
-    return (
-        <div>
-            <button onClick={handleChangeText}>Change Text</button>
-            <p>{store.textInCloud}</p>
-        </div>
-    );
-};
+    </div>)
+}
 
-export default MyComponent;
+export default observer(newCloud)
