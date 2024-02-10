@@ -1,6 +1,7 @@
 import React from 'react';
 import './Kaka.css'
-
+import kakaLevelStore from "../../../store/kakaLevelStore";
+import {observer} from "mobx-react-lite";
 
 //перенёс в index.ts
 // let foodLevel = [<div className='hungryItem'><img src={shava} alt="#"/></div>]
@@ -10,14 +11,14 @@ import './Kaka.css'
 // }
 
 
-const Kaka = (props:any) => {
+const Kaka = () => {
     return (<div>
             <div className='kakaLevel'>
-                {props.kakaLevel}
+                {kakaLevelStore.kakaLevel}
             </div>
             {/*<button onClick={props.kakaCleaner}>убрать</button>*/}
         </div>
     )
 }
 
-export default Kaka
+export default observer(Kaka)

@@ -1,16 +1,17 @@
 import React from "react";
 import './Emotion.css'
+import emotionStore from "../../store/emotionStore";
+import {observer} from "mobx-react-lite";
 
 
 
 
-
-const Pet = (props:any) => {
+const Pet = () => {
     return (<div>
-            <img className='emotion' src={props.emotion} alt="#"/>
+            <img className='emotion' src={emotionStore.currentEmotion} alt="#"/>
         </div>
     )
 }
 
-export default Pet
+export default observer(Pet)
 

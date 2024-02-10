@@ -7,7 +7,7 @@ import GamingButtons from "./components/GamingButtons";
 import CloudWithText from "./components/CloudWithText";
 import Pet from "./components/Pet";
 import Emotion from "./components/stats/Emotion";
-import MyComponent from "./components/cloudWithTextNew";
+//import MyComponent from "./components/cloudWithTextNew";
 
 //import Weather from "./components/Weather";
 
@@ -32,7 +32,7 @@ const App = (props:any) => {
                 height: '795px',
                 margin: '0 auto'
             }}>
-                <MyComponent/>
+                {/*<MyComponent/>*/}
                 <CloudWithText cloudWithText={props.cloudWithText}/>
 
                 <Food foodLevel={props.foodLevel} feeder={props.feeder} rerenderEntireTree={props.rerenderEntireTree}/>

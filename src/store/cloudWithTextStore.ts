@@ -1,10 +1,16 @@
 import {observable} from "mobx";
 
-const store = observable({
-    textInCloud:"MurMiay",textInCloudChange(newTextInCloud:string){
-        store.textInCloud = newTextInCloud
+
+const cloudWithTextStore = observable({
+    textInCloud:"MurMiay",
+    textInCloudChange(newTextInCloud:string){
+        cloudWithTextStore.textInCloud = newTextInCloud
+        setTimeout(cloudWithTextStore.textInCloudDefaulter, 1500);
+    },
+    textInCloudDefaulter(){
+        cloudWithTextStore.textInCloud = "MurMiay"
     }
 })
 
 
-export default store
+export default cloudWithTextStore

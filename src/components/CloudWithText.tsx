@@ -1,13 +1,14 @@
 import React from "react";
 import  "./CloudWithText.css";
+import cloudWithTextStore from "../store/cloudWithTextStore";
+import {observer} from "mobx-react-lite";
 
-
-const CloudWithText = (props:any) => {
+const CloudWithText = () => {
     return (<div className='cloudWithText'>
-            <p>{props.cloudWithText}</p>
+            <p>{cloudWithTextStore.textInCloud}</p>
         </div>
     )
 }
 
-export default CloudWithText
+export default observer(CloudWithText)
 
