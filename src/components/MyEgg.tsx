@@ -1,20 +1,33 @@
 import Food from "./stats/Food/Food";
-import Delya from "../images/Delya.png";
 import Kaka from "./stats/Kaka/Kaka";
 import GamingButtons from "./GamingButtons";
 import React from "react";
 import "./MyEgg.css";
+import CloudWithText from "./CloudWithText";
+import Pet from "./Pet";
+import Emotion from "./stats/Emotion";
+import eggStore from "../store/eggStore";
 
 
-
-const MyEgg = (props:any) => {
+const MyEgg = () => {
     return (
-        <div className='myEgg'>
-            <Food foodLevel={props.foodLevel} feeder={props.feeder} rerenderEntireTree={props.rerenderEntireTree}/>
-            <img className='Delya' src={Delya} alt="#"/>
-            <Kaka kakaLevel={props.kakaLevel} kakaCleaner={props.kakaCleaner}/>
-            <img className='emotion' src={props.emotion} alt="#"/>
-            <GamingButtons feeder={props.feeder} kakaCleaner={props.kakaCleaner} playing={props.playing}/>
+        <div className='myEgg' style={{
+            backgroundImage: `url(${eggStore.currentEgg}),  url(${eggStore.roomWindowBackground})`,
+            backgroundSize: 'cover, 350px',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center, 200px 230px',
+            width: '700px',
+            height: '795px',
+            margin: '0 auto'
+        }}>
+            {/*<MyComponent/>*/}
+            <CloudWithText/>
+            <Food/>
+            <Pet/>
+            <Kaka/>
+            <Emotion/>
+            <GamingButtons/>
+
         </div>
     )
 }

@@ -1,3 +1,4 @@
+/*
 import React from "react";
 
 //functions
@@ -239,3 +240,4 @@ setInterval(foodChecker, 5000);
 setInterval(makeHungry, 7000);
 
 export default state
+*/

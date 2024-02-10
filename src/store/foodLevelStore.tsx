@@ -29,11 +29,11 @@ const foodLevelStore = observable({
     },
     eatingSound : new Audio(crispsCrunch),
     makingHungry()  {
-        emotionStore.changeEmotion()
+
         if (foodLevelStore.foodLevel.length > 1) {
             foodLevelStore.foodLevel.pop()
         }
-
+        emotionStore.changeEmotion()
     },
     isHungry() {
         if (foodLevelStore.foodLevel.length < 3) {

@@ -23,7 +23,7 @@ const playingStore = observable({
 
 
 })
-setInterval(playingStore.needToPlay, 5000);
+setInterval(playingStore.needToPlay, 17000);
 
 export default playingStore
 
