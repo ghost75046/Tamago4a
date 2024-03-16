@@ -1,0 +1,16 @@
+.DarkTheme {
+  height: 150px;
+  width: 150px;
+//border: solid black;
+  display: flex;
+  flex-direction: column;
+  //margin-left: 5px;
+
+  button {
+    width: 130px;
+  }
+  img {
+    width: 150px;
+  }
+}
+

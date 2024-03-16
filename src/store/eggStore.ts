@@ -4,6 +4,7 @@ import night from "../images/night.jpg";
 import defaultEgg from "../images/defaultEggneNoGlass.png"
 
 
+
 const eggStore = observable({
 roomWindowBackground:day,
     currentEgg: defaultEgg

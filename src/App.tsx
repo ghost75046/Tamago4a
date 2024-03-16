@@ -1,15 +1,17 @@
 import React from 'react';
 import './App.css'
 import MyEgg from "./components/MyEgg";
+import DarkTheme from "./components/DarkTheme";
 
-const App = (props: any) => {
+const App = () => {
 
     return (
         <div className='mainDiv' style={{
-            backgroundColor: `${props.backgroungColor}`
+            backgroundColor: `antiquewhite`
         }}>
-            <button onClick={props.darkTheme}>darkTheme</button>
+
             <MyEgg/>
+            <DarkTheme />
         </div>
     )
 }
